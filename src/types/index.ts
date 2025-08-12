@@ -168,3 +168,4 @@ export interface Partnership {
   description: string;
   status: 'pending' | 'approved' | 'rejected';
   createdAt: string;
+}
