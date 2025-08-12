@@ -78,3 +78,93 @@ export interface Location {
   latitude: number;
   longitude: number;
 }
+
+export interface Event {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  discount?: number;
+  category: ServiceCategory;
+  isActive: boolean;
+}
+
+export interface Review {
+  id: string;
+  userId: string;
+  serviceId: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+  user: {
+    firstName: string;
+    lastName: string;
+    avatar?: string;
+  };
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  author: string;
+  publishedAt: string;
+  category: string;
+  tags: string[];
+  readTime: number;
+}
+
+export interface ForumPost {
+  id: string;
+  title: string;
+  content: string;
+  author: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    avatar?: string;
+  };
+  category: string;
+  replies: ForumReply[];
+  createdAt: string;
+  views: number;
+  likes: number;
+}
+
+export interface ForumReply {
+  id: string;
+  content: string;
+  author: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    avatar?: string;
+  };
+  createdAt: string;
+  likes: number;
+}
+
+export interface RouteInfo {
+  distance: number;
+  duration: number;
+  fuelCost: number;
+  tollCost: number;
+  totalCost: number;
+  waypoints: Location[];
+}
+
+export interface Partnership {
+  id: string;
+  companyName: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  serviceType: ServiceCategory;
+  description: string;
+  status: 'pending' | 'approved' | 'rejected';
+  createdAt: string;

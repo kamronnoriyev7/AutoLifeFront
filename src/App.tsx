@@ -16,6 +16,13 @@ import ServiceDetailPage from './pages/ServiceDetailPage';
 import BookingsPage from './pages/BookingsPage';
 import ProfilePage from './pages/ProfilePage';
 import NotFoundPage from './pages/NotFoundPage';
+import EventsPage from './pages/EventsPage';
+import ReviewsPage from './pages/ReviewsPage';
+import BlogPage from './pages/BlogPage';
+import ForumPage from './pages/ForumPage';
+import RoutePlannerPage from './pages/RoutePlannerPage';
+import PartnershipsPage from './pages/PartnershipsPage';
+import SupportPage from './pages/SupportPage';
 
 function App() {
   return (
@@ -32,6 +39,12 @@ function App() {
               <Route path="/verify-otp" element={<OTPVerifyPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/services/:id" element={<ServiceDetailPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/forum" element={<ForumPage />} />
+              <Route path="/route-planner" element={<RoutePlannerPage />} />
+              <Route path="/partnerships" element={<PartnershipsPage />} />
+              <Route path="/support" element={<SupportPage />} />
               
               {/* Protected Routes */}
               <Route 
@@ -47,6 +60,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <ProfilePage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/reviews" 
+                element={
+                  <ProtectedRoute>
+                    <ReviewsPage />
                   </ProtectedRoute>
                 } 
               />
